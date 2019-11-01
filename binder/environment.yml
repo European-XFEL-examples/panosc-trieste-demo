@@ -1,0 +1,14 @@
+channels:
+- defaults
+- conda-forge
+dependencies:
+- pip=19.3.1=py37_0
+- ipykernel=5.1.3=py37h5ca1d4c_0
+- ipython=7.9.0=py37h5ca1d4c_0
+- jupyterlab=1.2.0=py_0
+- matplotlib=3.1.1=py37_1
+- numpy=1.17.3=py37h95a1406_0
+- xarray=0.14.0=py_0
+- pip:
+  - karabo_data==0.7.0
+
