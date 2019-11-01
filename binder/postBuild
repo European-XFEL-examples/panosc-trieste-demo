@@ -1,7 +1,9 @@
 set -ex
 
+mkdir -p ./data/SA1/201830/p900025/raw/r0150
 tar -xf ./data/SA1-201830-p900025-raw-r0150.tar.gz -C ./data/SA1/201830/p900025/raw/r0150
 rm -f ./data/SA1-201830-p900025-raw-r0150.tar.gz
 
+mkdir -p ./data/XMPL/201750/p700000/raw/r0008
 tar -xf ./data/XMPL-201750-p700000-raw-r0008.tar.gz -C ./data/XMPL/201750/p700000/raw/r0008
 rm -f ./data/XMPL-201750-p700000-raw-r0008.tar.gz
