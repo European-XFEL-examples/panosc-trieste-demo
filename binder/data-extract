@@ -1,0 +1,3 @@
+tar -C ./data/ -xzvf ./data/trieste-data.tar.gz
+mv ./data/data-archive/* ./data/
+rm -rf ./data/data-archive
