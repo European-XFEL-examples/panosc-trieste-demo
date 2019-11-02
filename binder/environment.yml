@@ -11,4 +11,5 @@ dependencies:
 - xarray=0.14.0=py_0
 - pip:
   - karabo_data==0.7.0
+  - awscli==1.16.272
 
