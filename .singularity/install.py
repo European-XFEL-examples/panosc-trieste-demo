@@ -39,7 +39,7 @@ def install_kernel(*, template_path, overlay_path, kernel_name):
         overlay_cmd = ""
 
     #  Crappily hard-coded list of binds, TODO: IMBROVE BIND PATH TEMPLATING
-    target_bind = ["/gpfs", "/data", "/afs", "/cvmfs", "/pnfs", "/nfs", "/asap3", "/run"]
+    target_bind = ["/gpfs", "/data", "/afs", "/cvmfs", "/pnfs", "/nfs", "/asap3", "/run", "/tmp"]
     bind_cmd = ["-B\", \"{0}:{0}".format(b) for b in target_bind]
 
     #  Fill in kernel.json variables

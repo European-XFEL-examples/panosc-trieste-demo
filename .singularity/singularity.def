@@ -7,7 +7,6 @@ From: centos:7.6.1810
 %files
   ./binder /repo/binder
   ./notebooks /repo/notebooks
-  ./data /repo/data
   ./.singularity /repo/.singularity
 
 %post
@@ -39,14 +38,10 @@ From: centos:7.6.1810
   ##  Export environment to concretise
   conda env export -n base -f /.singularity.d/logs/03-conda-env-export.log
 
-  #  Extract the data
-  mkdir -p /repo/data/SA1/201830/p900025/raw/r0150
-  tar -xf /repo/data/SA1-201830-p900025-raw-r0150.tar.gz -C /repo/data/SA1/201830/p900025/raw/r0150
-  rm -f /repo/data/SA1-201830-p900025-raw-r0150.tar.gz
-
-  mkdir -p /repo/data/XMPL/201750/p700000/raw/r0008
-  tar -xf /repo/data/XMPL-201750-p700000-raw-r0008.tar.gz -C /repo/data/XMPL/201750/p700000/raw/r0008
-  rm -f /repo/data/XMPL-201750-p700000-raw-r0008.tar.gz
+  #  Download the data
+  cd /repo/
+  bash ./binder/data-download
+  cd /
 
 %apphelp setup
   Copies notebooks and data out of the image and into `./euxfel-trieste`
@@ -61,3 +56,8 @@ From: centos:7.6.1810
   mkdir -p ./euxfel-trieste
   cp -r /repo/notebooks ./euxfel-trieste/notebooks
   cp -r /repo/data ./euxfel-trieste/data
+
+  cp -r /repo/binder ./euxfel-trieste/binder
+  cd ./euxfel-trieste
+  bash ./binder/data-extract
+  rm -rf ./binder
