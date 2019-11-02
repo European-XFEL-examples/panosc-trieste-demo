@@ -1,5 +1,3 @@
 set -ex
 
-./data/data-download
-
-
+./binder/data-download

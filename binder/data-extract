@@ -1,2 +1,3 @@
+#!/bin/bash
 tar -xzvf ./data/trieste-demo-data.tar.gz
 rm -rf ./data/trieste-demo-data.tar.gz
