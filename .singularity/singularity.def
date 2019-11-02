@@ -61,3 +61,9 @@ From: centos:7.6.1810
   cd ./euxfel-trieste
   bash ./binder/data-extract
   rm -rf ./binder
+
+  #   "display_name": "Python 3",  ->  "display_name": "euxfel-trieste",
+  #   "name": "python3"            ->  "name": "euxfel-trieste"
+
+  sed -i 's/"display_name": "Python 3",/"display_name": "euxfel-trieste",/' ./euxfel-trieste/notebooks/*
+  sed -i 's/"name": "python3"/"name": "euxfel-trieste"/' ./euxfel-trieste/notebooks/*
