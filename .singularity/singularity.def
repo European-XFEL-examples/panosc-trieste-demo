@@ -43,6 +43,10 @@ From: centos:7.6.1810
   bash ./binder/data-download
   cd /
 
+  #  Change some permissions to allow for editing via overlay/tmpfs
+  chmod -R 777 /repo/
+  chmod -R 777 /usr/local/
+
 %apphelp setup
   Copies notebooks and data out of the image and into `./euxfel-trieste`
 
